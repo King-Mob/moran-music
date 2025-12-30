@@ -3,12 +3,12 @@ import { parseFile } from "music-metadata";
 
 const getSong = async (songFileLocation) => {
     const song = await parseFile(songFileLocation);
-
+    const location = songFileLocation.replace("public/", "");
     console.log(song);
 
     return {
         song,
-        location: songFileLocation,
+        location,
     };
 };
 
